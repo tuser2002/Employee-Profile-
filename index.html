@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maniquzzaman Tuser - Employee Profile</title>
     <style>
-        /* ব্যাকগ্রাউন্ড ডার্ক গ্রে করা হয়েছে */
-        body { font-family: 'Arial', sans-serif; background-color: #0f172a; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
+        body { font-family: 'Arial', sans-serif; background-color: #f4f5f9; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
         
-        /* কার্ড অ্যানিমেশন ও ডার্ক থিম */
+        /* কার্ড অ্যানিমেশন */
         .profile-card { 
-            background: #1e293b; 
+            background: white; 
             width: 100%; 
             max-width: 400px; 
             border-radius: 15px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             overflow: hidden; 
             border-top: 5px solid #d21630;
             opacity: 0;
@@ -22,7 +21,7 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #334155; display: flex; justify-content: center; align-items: center; }
+        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #333333; display: flex; justify-content: center; align-items: center; }
         
         /* লোগো অ্যানিমেশন */
         .banner-img { 
@@ -45,9 +44,9 @@
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            border: 5px solid #1e293b; /* বর্ডার কার্ডের রঙের সাথে মিলানো */
+            border: 5px solid white;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             opacity: 0;
             transform: scale(0.8);
             animation: zoomIn 0.6s ease-out 0.6s forwards;
@@ -55,11 +54,11 @@
         
         .name-section { text-align: center; margin: 15px 0 20px 0; }
         
-        /* নাম ও পদবী (ডার্ক মোড টেক্সট কালার) */
+        /* নাম ও পদবী অ্যানিমেশন */
         .name { 
             font-size: 26px; 
             font-weight: bold; 
-            color: #f8fafc; 
+            color: #1a252f; 
             margin: 0; 
             opacity: 0;
             animation: fadeIn 0.5s ease-out 0.8s forwards;
@@ -79,12 +78,12 @@
         
         .info-section { text-align: left; padding: 0 25px; }
         
-        /* ইনফো বক্স ও বর্ডার ডার্ক থিম */
+        /* প্রতিটি ইনফো বক্সের একের পর এক আসার অ্যানিমেশন */
         .info-box { 
             display: flex; 
             justify-content: space-between; 
             padding: 14px 0; 
-            border-bottom: 1px solid #334155; 
+            border-bottom: 1px solid #eceff1; 
             opacity: 0;
             transform: translateX(-10px);
         }
@@ -95,10 +94,10 @@
         .info-box:nth-child(5) { animation: slideIn 0.4s ease-out 1.5s forwards; }
         .info-box:nth-child(6) { animation: slideIn 0.4s ease-out 1.6s forwards; border-bottom: none; }
         
-        .info-label { color: #94a3b8; font-weight: bold; }
-        .info-value { color: #e2e8f0; font-weight: 500; }
+        .info-label { color: #7f8c8d; font-weight: bold; }
+        .info-value { color: #2c3e50; font-weight: 500; }
         
-        /* সোশ্যাল বাটন সেকশন */
+        /* সোশ্যাল বাটন সেকশন (পাশাপাশি গ্রিড) */
         .social-section {
             display: flex;
             justify-content: center;
@@ -141,21 +140,21 @@
         }
         .wa-btn:hover { background-color: #20BA5A; }
 
-        .footer-text { text-align: center; font-size: 12px; color: #64748b; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
-        .footer-text a { color: #e11d48; text-decoration: none; font-weight: bold; }
+        .footer-text { text-align: center; font-size: 12px; color: #95a5a6; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
+        .footer-text a { color: #d21630; text-decoration: none; font-weight: bold; }
         
-        /* ডিসক্লেইমার ডার্ক মোড */
+        /* ডিসক্লেইমার সেকশনের স্টাইল */
         .disclaimer-section {
             max-width: 400px;
             text-align: center;
             font-size: 10px;
-            color: #475569;
+            color: #b2bec3;
             margin-top: 15px;
             line-height: 1.4;
             padding: 0 10px;
         }
         .disclaimer-section a {
-            color: #64748b;
+            color: #95a5a6;
             text-decoration: underline;
         }
 
@@ -200,6 +199,7 @@
             <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
         </div>
 
+        <!-- সোশ্যাল বাটন গ্রিড (ফেসবুক এবং হোয়াটসঅ্যাপ পাশাপাশি সাজানো) -->
         <div class="social-section">
             <a href="https://facebook.com" target="_blank" class="social-btn fb-btn">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
