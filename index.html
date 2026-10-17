@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maniquzzaman Tuser - Employee Profile</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f5f9; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
+        /* ব্যাকগ্রাউন্ড ডার্ক গ্রে করা হয়েছে */
+        body { font-family: 'Arial', sans-serif; background-color: #0f172a; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
         
-        /* কার্ড অ্যানিমেশন */
+        /* কার্ড অ্যানিমেশন ও ডার্ক থিম */
         .profile-card { 
-            background: white; 
+            background: #1e293b; 
             width: 100%; 
             max-width: 400px; 
             border-radius: 15px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
             overflow: hidden; 
             border-top: 5px solid #d21630;
             opacity: 0;
@@ -21,7 +22,7 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #333333; display: flex; justify-content: center; align-items: center; }
+        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #334155; display: flex; justify-content: center; align-items: center; }
         
         /* লোগো অ্যানিমেশন */
         .banner-img { 
@@ -33,16 +34,35 @@
             animation: zoomIn 0.6s ease-out 0.4s forwards;
         }
         
-        .name-section { text-align: center; margin: 20px 0; }
+        /* প্রোফাইল ইমেজ সেকশন */
+        .profile-img-container {
+            text-align: center;
+            margin-top: -55px;
+            position: relative;
+            z-index: 2;
+        }
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 5px solid #1e293b; /* বর্ডার কার্ডের রঙের সাথে মিলানো */
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: zoomIn 0.6s ease-out 0.6s forwards;
+        }
         
-        /* নাম ও পদবী অ্যানিমেশন */
+        .name-section { text-align: center; margin: 15px 0 20px 0; }
+        
+        /* নাম ও পদবী (ডার্ক মোড টেক্সট কালার) */
         .name { 
             font-size: 26px; 
             font-weight: bold; 
-            color: #1a252f; 
+            color: #f8fafc; 
             margin: 0; 
             opacity: 0;
-            animation: fadeIn 0.5s ease-out 0.6s forwards;
+            animation: fadeIn 0.5s ease-out 0.8s forwards;
         }
         .designation { 
             display: inline-block; 
@@ -54,77 +74,88 @@
             font-weight: bold; 
             margin-top: 8px; 
             opacity: 0;
-            animation: fadeIn 0.5s ease-out 0.8s forwards;
+            animation: fadeIn 0.5s ease-out 1.0s forwards;
         }
         
         .info-section { text-align: left; padding: 0 25px; }
         
-        /* প্রতিটি ইনফো বক্সের একের পর এক আসার অ্যানিমেশন */
+        /* ইনফো বক্স ও বর্ডার ডার্ক থিম */
         .info-box { 
             display: flex; 
             justify-content: space-between; 
             padding: 14px 0; 
-            border-bottom: 1px solid #eceff1; 
+            border-bottom: 1px solid #334155; 
             opacity: 0;
             transform: translateX(-10px);
         }
-        .info-box:nth-child(1) { animation: slideIn 0.4s ease-out 0.9s forwards; }
-        .info-box:nth-child(2) { animation: slideIn 0.4s ease-out 1.0s forwards; }
-        .info-box:nth-child(3) { animation: slideIn 0.4s ease-out 1.1s forwards; }
-        .info-box:nth-child(4) { animation: slideIn 0.4s ease-out 1.2s forwards; }
-        .info-box:nth-child(5) { animation: slideIn 0.4s ease-out 1.3s forwards; }
-        .info-box:nth-child(6) { animation: slideIn 0.4s ease-out 1.4s forwards; border-bottom: none; }
+        .info-box:nth-child(1) { animation: slideIn 0.4s ease-out 1.1s forwards; }
+        .info-box:nth-child(2) { animation: slideIn 0.4s ease-out 1.2s forwards; }
+        .info-box:nth-child(3) { animation: slideIn 0.4s ease-out 1.3s forwards; }
+        .info-box:nth-child(4) { animation: slideIn 0.4s ease-out 1.4s forwards; }
+        .info-box:nth-child(5) { animation: slideIn 0.4s ease-out 1.5s forwards; }
+        .info-box:nth-child(6) { animation: slideIn 0.4s ease-out 1.6s forwards; border-bottom: none; }
         
-        .info-label { color: #7f8c8d; font-weight: bold; }
-        .info-value { color: #2c3e50; font-weight: 500; }
+        .info-label { color: #94a3b8; font-weight: bold; }
+        .info-value { color: #e2e8f0; font-weight: 500; }
         
-        /* ফেসবুক বাটন সেকশন */
+        /* সোশ্যাল বাটন সেকশন */
         .social-section {
-            text-align: center;
-            margin: 15px 0 5px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 25px 5px 25px;
             opacity: 0;
-            animation: fadeIn 0.5s ease-out 1.5s forwards;
+            animation: fadeIn 0.5s ease-out 1.7s forwards;
         }
-        .fb-btn {
+        .social-btn {
+            flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: #1877F2;
             color: white;
             text-decoration: none;
-            padding: 10px 24px;
+            padding: 10px 12px;
             border-radius: 25px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(24, 119, 242, 0.2);
         }
-        .fb-btn:hover {
-            background-color: #166FE5;
+        .social-btn:hover {
             transform: translateY(-2px);
         }
-        .fb-btn svg {
-            margin-right: 8px;
+        .social-btn svg {
+            margin-right: 6px;
             fill: white;
             width: 16px;
             height: 16px;
         }
-
-        .footer-text { text-align: center; font-size: 12px; color: #95a5a6; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
-        .footer-text a { color: #d21630; text-decoration: none; font-weight: bold; }
+        .fb-btn {
+            background-color: #1877F2;
+            box-shadow: 0 4px 6px rgba(24, 119, 242, 0.2);
+        }
+        .fb-btn:hover { background-color: #166FE5; }
         
-        /* ডিসক্লেইমার সেকশনের স্টাইল */
+        .wa-btn {
+            background-color: #25D366;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+        }
+        .wa-btn:hover { background-color: #20BA5A; }
+
+        .footer-text { text-align: center; font-size: 12px; color: #64748b; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
+        .footer-text a { color: #e11d48; text-decoration: none; font-weight: bold; }
+        
+        /* ডিসক্লেইমার ডার্ক মোড */
         .disclaimer-section {
             max-width: 400px;
             text-align: center;
             font-size: 10px;
-            color: #b2bec3;
+            color: #475569;
             margin-top: 15px;
             line-height: 1.4;
             padding: 0 10px;
         }
         .disclaimer-section a {
-            color: #95a5a6;
+            color: #64748b;
             text-decoration: underline;
         }
 
@@ -151,6 +182,10 @@
             <img class="banner-img" src="logo.jpg" alt="Delta LP Gas Logo">
         </div>
         
+        <div class="profile-img-container">
+            <img class="profile-img" src="profile.jpg" alt="Maniquzzaman Tuser">
+        </div>
+        
         <div class="name-section">
             <div class="name">Maniquzzaman Tuser</div>
             <div class="designation">Operator</div>
@@ -165,11 +200,14 @@
             <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
         </div>
 
-        <!-- আপনার আসল ফেসবুক প্রোফাইল লিংক এখানে যুক্ত করা হয়েছে -->
         <div class="social-section">
-            <a href="https://www.facebook.com/share/1F5xYfSn8k/" target="_blank" class="fb-btn">
+            <a href="https://facebook.com" target="_blank" class="social-btn fb-btn">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Connect on Facebook
+                Facebook
+            </a>
+            <a href="https://wa.me" target="_blank" class="social-btn wa-btn">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.64-1.03-5.123-2.905-6.994s-4.363-2.909-7.004-2.91c-5.45 0-9.887 4.434-9.89 9.885-.001 2.225.647 4.3 1.869 6.19l-.964 3.522 3.613-.948zm11.373-7.394c-.273-.136-1.62-.8-1.87-.891-.252-.09-.435-.136-.617.136-.182.273-.706.891-.865 1.072-.16.182-.319.204-.592.068-.273-.136-1.153-.424-2.196-1.356-.812-.724-1.36-1.619-1.52-1.892-.16-.273-.017-.42.12-.555.123-.122.273-.318.41-.477.136-.16.182-.273.273-.455.09-.182.046-.341-.023-.477-.068-.136-.617-1.487-.845-2.036-.22-.532-.442-.46-.616-.46h-.526c-.182 0-.477.068-.727.341-.25.273-.954.932-.954 2.273s.977 2.636 1.114 2.818c.137.182 1.923 2.936 4.658 4.116.651.281 1.158.449 1.554.575.654.208 1.25.179 1.721.108.524-.078 1.62-.663 1.847-1.303.228-.641.228-1.189.16-1.303-.07-.113-.251-.182-.524-.318z"/></svg>
+                WhatsApp
             </a>
         </div>
         
@@ -178,7 +216,6 @@
         </div>
     </div>
 
-    <!-- লোগো ব্যবহারের জন্য আইনি সুরক্ষামূলক ডিসক্লেইমার নোটিশ -->
     <div class="disclaimer-section">
         This is a personal employee profile website created for informational/portfolio purposes. <br>
         The 'Delta LP Gas' logo and trademark belong entirely to <a href="http://deltalpg.com" target="_blank">Delta LPG Limited</a>.
