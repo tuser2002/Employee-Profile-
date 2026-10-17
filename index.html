@@ -7,8 +7,11 @@
     <style>
         body { font-family: 'Arial', sans-serif; background-color: #f4f5f9; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
         .profile-card { background: white; width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; border-top: 5px solid #d21630; }
-        .banner-container { width: 100%; text-align: center; background-color: #ffffff; padding: 25px 0 15px 0; border-bottom: 1px dashed #eceff1; }
-        .banner-img { max-width: 75%; height: auto; display: inline-block; }
+        
+        /* লোগো সেকশনের ব্যাকগ্রাউন্ড কালো করা হলো যেন লোগোটি সুন্দর দেখায় */
+        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #333333; display: flex; justify-content: center; align-items: center; }
+        .banner-img { max-width: 85%; height: auto; display: block; }
+        
         .name-section { text-align: center; margin: 20px 0; }
         .name { font-size: 26px; font-weight: bold; color: #1a252f; margin: 0; }
         .designation { display: inline-block; background: #d21630; color: white; padding: 6px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-top: 8px; }
@@ -24,9 +27,9 @@
 
     <div class="profile-card">
         
-        <!-- 🖼️ Delta LP Gas Fixed Image Link -->
+        <!-- লোগো ইমেজটি এখানে যুক্ত করা হয়েছে -->
         <div class="banner-container">
-            <img class="banner-img" src="https://squarespace-cdn.com" alt="Delta LP Gas Logo">
+            <img class="banner-img" src="delta-logo.png" alt="Delta LP Gas Logo">
         </div>
         
         <div class="name-section">
@@ -44,7 +47,7 @@
         </div>
         
         <div class="footer-text">
-            Website: <a href="http://deltalpg.com">deltalpg.com</a>
+            Website: <a href="http://deltalpg.com" target="_blank">deltalpg.com</a>
         </div>
     </div>
 
