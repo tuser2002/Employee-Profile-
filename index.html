@@ -5,41 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maniquzzaman Tuser - Employee Profile</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .profile-card { background: white; width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; border-top: 8px solid #009639; padding-bottom: 20px; }
-        .company-logo { font-size: 24px; font-weight: bold; color: #d22630; margin-top: 25px; text-transform: uppercase; letter-spacing: 1px; }
-        .company-sub { font-size: 13px; color: #009639; font-weight: bold; margin-bottom: 20px; }
-        .name { font-size: 26px; font-weight: bold; color: #1a252f; margin: 15px 0 5px 0; }
-        .designation { display: inline-block; background: #d22630; color: white; padding: 6px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 25px; }
+        body { font-family: 'Arial', sans-serif; background-color: #f4f5f9; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .profile-card { background: white; width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
+        .banner-container { width: 100%; text-align: center; background-color: #f7f9fa; }
+        .banner-img { width: 100%; height: auto; display: block; }
+        .company-logo { font-size: 24px; font-weight: bold; color: #d21630; margin-top: 20px; text-transform: uppercase; text-align: center; }
+        .company-sub { font-size: 13px; color: #006b39; font-weight: bold; margin-bottom: 20px; text-align: center; }
+        .name-section { text-align: center; margin: 15px 0; }
+        .name { font-size: 26px; font-weight: bold; color: #1a252f; margin: 0; }
+        .designation { display: inline-block; background: #d21630; color: white; padding: 6px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-top: 5px; }
         .info-section { text-align: left; padding: 0 25px; }
-        .info-box { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+        .info-box { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eceff1; }
         .info-label { color: #7f8c8d; font-weight: bold; }
         .info-value { color: #2c3e50; font-weight: 500; }
-        .footer-text { font-size: 12px; color: #95a5a6; margin-top: 20px; font-weight: bold; }
+        .footer-text { text-align: center; font-size: 12px; color: #95a5a6; margin-top: 20px; font-weight: bold; margin-bottom: 20px; }
+        .footer-text a { color: #95a5a6; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<div class="profile-card">
-    <div class="company-logo">Delta LP Gas</div>
-    <div class="company-sub">লাল সবুজের প্রত্যয়</div>
-    
-    <div class="name">Maniquzzaman Tuser</div>
-    <div class="designation">Operator</div>
-    
-    <div class="info-section">
-        <div class="info-box"><span class="info-label">ID No :</span><span class="info-value">000284</span></div>
-        <div class="info-box"><span class="info-label">Email :</span><span class="info-value">manikuzzaman226@gmail.com</span></div>
-        <div class="info-box"><span class="info-label">Blood :</span><span class="info-value">A+</span></div>
-        <div class="info-box"><span class="info-label">Phone :</span><span class="info-value">01764374986</span></div>
-        <div class="info-box"><span class="info-label">Join Date :</span><span class="info-value">25-02-2024</span></div>
-        <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
+    <div class="profile-card">
+        
+        <!-- 🖼️ Delta LP Gas Official Logo -->
+        <div class="banner-container">
+            <img class="banner-img" src="https://squarespace-cdn.com" alt="Delta LP Gas Logo" style="padding: 15px; max-height: 100px; object-fit: contain; background: #ffffff; margin: 0 auto;">
+        </div>
+        
+        <div class="name-section">
+            <div class="name">Maniquzzaman Tuser</div>
+            <div class="designation">Operator</div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-box"><span class="info-label">ID No :</span><span class="info-value">000284</span></div>
+            <div class="info-box"><span class="info-label">Email :</span><span class="info-value">manikuzzaman226@gmail.com</span></div>
+            <div class="info-box"><span class="info-label">Blood :</span><span class="info-value">A+</span></div>
+            <div class="info-box"><span class="info-label">Phone :</span><span class="info-value">01764374986</span></div>
+            <div class="info-box"><span class="info-label">Join Date :</span><span class="info-value">25-02-2024</span></div>
+            <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
+        </div>
+        
+        <div class="footer-text">
+            Website: <a href="http://deltalpg.com">deltalpg.com</a>
+        </div>
     </div>
-    
-    <div class="footer-text">
-        Website: ://deltalpg.com
-    </div>
-</div>
 
 </body>
 </html>
