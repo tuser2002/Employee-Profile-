@@ -15,17 +15,18 @@
             border-radius: 15px; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
             overflow: hidden; 
-            border-top: 5px solid #009640; /* ডেল্টা এলপি গ্যাসের ব্র্যান্ডিং সবুজ রং */
+            border-top: 5px solid #d21630;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .banner-container { width: 100%; text-align: center; background-color: #ffffff; padding: 25px 0 65px 0; border-bottom: 1px dashed #e0e0e0; display: flex; justify-content: center; align-items: center; }
+        /* লোগো ব্যানার সেকশন - আগের কোডের ডিজাইন অনুযায়ী রিসেট করা */
+        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #333333; display: flex; justify-content: center; align-items: center; }
         
-        /* লোগো অ্যানিমেশন */
+        /* লোগো সাইজ - আবার আগের মতো বড় (85%) করা হয়েছে */
         .banner-img { 
-            max-width: 60%; 
+            max-width: 85%; 
             height: auto; 
             display: block; 
             opacity: 0;
@@ -33,10 +34,10 @@
             animation: zoomIn 0.6s ease-out 0.4s forwards;
         }
         
-        /* প্রফেশনাল প্রোফাইল পিকচার সেকশন (ছোট ও সুন্দর আকৃতির) */
+        /* প্রফেশনাল প্রোফাইল পিকচার সেকশন */
         .profile-pic-container {
             text-align: center;
-            margin-top: -55px; /* ব্যানার ও নামের সাথে সামঞ্জস্য রাখতে */
+            margin-top: -55px;
             position: relative;
             z-index: 2;
         }
@@ -52,11 +53,11 @@
             animation: fadeIn 0.5s ease-out 0.5s forwards;
         }
         
-        .name-section { text-align: center; margin: 15px 0 20px 0; }
+        .name-section { text-align: center; margin: 20px 0; }
         
         /* নাম ও পদবী অ্যানিমেশন */
         .name { 
-            font-size: 24px; 
+            font-size: 26px; 
             font-weight: bold; 
             color: #1a252f; 
             margin: 0; 
@@ -65,13 +66,13 @@
         }
         .designation { 
             display: inline-block; 
-            background: #d21630; /* লাল ব্যাকগ্রাউন্ড */
+            background: #d21630; 
             color: white; 
-            padding: 5px 18px; 
+            padding: 6px 20px; 
             border-radius: 20px; 
-            font-size: 13px; 
+            font-size: 14px; 
             font-weight: bold; 
-            margin-top: 6px; 
+            margin-top: 8px; 
             opacity: 0;
             animation: fadeIn 0.5s ease-out 0.8s forwards;
         }
@@ -82,7 +83,7 @@
         .info-box { 
             display: flex; 
             justify-content: space-between; 
-            padding: 13px 0; 
+            padding: 14px 0; 
             border-bottom: 1px solid #eceff1; 
             opacity: 0;
             transform: translateX(-10px);
@@ -100,7 +101,7 @@
         /* ফেসবুক বাটন */
         .social-section {
             text-align: center;
-            margin: 20px 0 5px 0;
+            margin: 15px 0 5px 0;
             opacity: 0;
             animation: fadeIn 0.5s ease-out 1.5s forwards;
         }
@@ -130,7 +131,7 @@
         }
 
         .footer-text { text-align: center; font-size: 12px; color: #95a5a6; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
-        .footer-text a { color: #009640; text-decoration: none; font-weight: bold; }
+        .footer-text a { color: #d21630; text-decoration: none; font-weight: bold; }
         
         /* ডিসক্লেইমার সেকশন */
         .disclaimer-section {
@@ -159,18 +160,16 @@
             <img class="banner-img" src="logo.jpg" alt="Delta LP Gas Logo">
         </div>
         
-        <!-- প্রফেশনাল প্রোফাইল পিকচার সেকশন -->
+        <!-- প্রোফাইল পিকচার সেকশন -->
         <div class="profile-pic-container">
             <img class="profile-pic" src="profile.jpg" alt="Maniquzzaman Tuser">
         </div>
         
-        <!-- নাম ও পদবী পরিবর্তন করা হয়েছে -->
         <div class="name-section">
             <div class="name">Maniquzzaman Tuser</div>
             <div class="designation">Operator</div>
         </div>
         
-        <!-- তথ্যাবলী আপডেট করা হয়েছে -->
         <div class="info-section">
             <div class="info-box"><span class="info-label">ID No :</span><span class="info-value">000284</span></div>
             <div class="info-box"><span class="info-label">Email :</span><span class="info-value">manikuzzaman226@gmail.com</span></div>
@@ -180,7 +179,7 @@
             <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
         </div>
 
-        <!-- আপডেটকৃত ফেসবুক প্রোফাইল লিংক -->
+        <!-- ফেসবুক প্রোফাইল লিংক -->
         <div class="social-section">
             <a href="https://facebook.com" target="_blank" class="fb-btn">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
