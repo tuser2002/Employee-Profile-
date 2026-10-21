@@ -7,7 +7,7 @@
     <style>
         body { font-family: 'Arial', sans-serif; background-color: #f4f5f9; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
         
-        /* কার্ড অ্যানিমেশন */
+        /* কার্ড অ্যানিমেশন ও স্টাইল */
         .profile-card { 
             background: white; 
             width: 100%; 
@@ -15,17 +15,19 @@
             border-radius: 15px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             overflow: hidden; 
-            border-top: 5px solid #d21630;
+            border-top: 5px solid #009640; /* ব্র্যান্ড সবুজ রং */
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease-out forwards;
+            position: relative;
         }
         
-        .banner-container { width: 100%; text-align: center; background-color: #000000; padding: 20px 0; border-bottom: 1px dashed #333333; display: flex; justify-content: center; align-items: center; }
+        /* টপ ব্যানার ব্যাকগ্রাউন্ড */
+        .banner-container { width: 100%; text-align: center; background-color: #ffffff; padding: 25px 0 65px 0; border-bottom: 1px dashed #e0e0e0; display: flex; justify-content: center; align-items: center; }
         
-        /* লোগো অ্যানিমেশন */
+        /* লোগো */
         .banner-img { 
-            max-width: 85%; 
+            max-width: 60%; 
             height: auto; 
             display: block; 
             opacity: 0;
@@ -33,24 +35,48 @@
             animation: zoomIn 0.6s ease-out 0.4s forwards;
         }
         
-        .name-section { text-align: center; margin: 20px 0; }
+        /* প্রফেশনাল প্রোফাইল পিকচার বক্স */
+        .profile-pic-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #fff;
+            padding: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin: -55px auto 0 auto;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.6s forwards;
+            border: 2px solid #d21630; /* ব্র্যান্ড লাল বর্ডার */
+        }
         
-        /* নাম ও পদবী অ্যানিমেশন */
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .name-section { text-align: center; margin: 15px 0 20px 0; }
+        
+        /* নাম ও পদবী */
         .name { 
-            font-size: 26px; 
+            font-size: 24px; 
             font-weight: bold; 
             color: #1a252f; 
             margin: 0; 
             opacity: 0;
-            animation: fadeIn 0.5s ease-out 0.6s forwards;
+            animation: fadeIn 0.5s ease-out 0.7s forwards;
         }
         .designation { 
             display: inline-block; 
-            background: #d21630; 
+            background: #d21630; /* লাল ব্যাকগ্রাউন্ড */
             color: white; 
-            padding: 6px 20px; 
+            padding: 5px 22px; 
             border-radius: 20px; 
-            font-size: 14px; 
+            font-size: 13px; 
             font-weight: bold; 
             margin-top: 8px; 
             opacity: 0;
@@ -59,7 +85,7 @@
         
         .info-section { text-align: left; padding: 0 25px; }
         
-        /* প্রতিটি ইনফো বক্সের একের পর এক আসার অ্যানিমেশন */
+        /* তথ্য বক্সের অ্যানিমেশন */
         .info-box { 
             display: flex; 
             justify-content: space-between; 
@@ -81,7 +107,7 @@
         /* ফেসবুক বাটন সেকশন */
         .social-section {
             text-align: center;
-            margin: 15px 0 5px 0;
+            margin: 20px 0 5px 0;
             opacity: 0;
             animation: fadeIn 0.5s ease-out 1.5s forwards;
         }
@@ -111,9 +137,9 @@
         }
 
         .footer-text { text-align: center; font-size: 12px; color: #95a5a6; margin-top: 15px; font-weight: bold; margin-bottom: 25px; }
-        .footer-text a { color: #d21630; text-decoration: none; font-weight: bold; }
+        .footer-text a { color: #009640; text-decoration: none; font-weight: bold; }
         
-        /* ডিসক্লেইমার সেকশনের স্টাইল */
+        /* ডিসক্লেইমার */
         .disclaimer-section {
             max-width: 400px;
             text-align: center;
@@ -128,7 +154,7 @@
             text-decoration: underline;
         }
 
-        /* অ্যানিমেশনের মূল কি-ফ্রেমসমূহ */
+        /* --- অ্যানিমেশন কি-ফ্রেম --- */
         @keyframes fadeInUp {
             to { opacity: 1; transform: translateY(0); }
         }
@@ -147,15 +173,23 @@
 
     <div class="profile-card">
         
+        <!-- লোগো ব্যানার -->
         <div class="banner-container">
             <img class="banner-img" src="logo.jpg" alt="Delta LP Gas Logo">
         </div>
         
+        <!-- প্রফেশনাল প্রোফাইল পিকচার সেকশন -->
+        <div class="profile-pic-container">
+            <img class="profile-pic" src="profile.jpg" alt="Maniquzzaman Tuser">
+        </div>
+        
+        <!-- নাম ও পদবী -->
         <div class="name-section">
             <div class="name">Maniquzzaman Tuser</div>
             <div class="designation">Operator</div>
         </div>
         
+        <!-- তথ্যের তালিকা -->
         <div class="info-section">
             <div class="info-box"><span class="info-label">ID No :</span><span class="info-value">000284</span></div>
             <div class="info-box"><span class="info-label">Email :</span><span class="info-value">manikuzzaman226@gmail.com</span></div>
@@ -165,9 +199,9 @@
             <div class="info-box"><span class="info-label">Plant Address :</span><span class="info-value" style="text-align: right; max-width: 60%;">Char Sayedpur, Narayanganj 1400</span></div>
         </div>
 
-        <!-- আপনার আসল ফেসবুক প্রোফাইল লিংক এখানে যুক্ত করা হয়েছে -->
+        <!-- আপডেট করা নতুন ফেসবুক প্রোফাইল লিংক -->
         <div class="social-section">
-            <a href="https://www.facebook.com/share/1F5xYfSn8k/" target="_blank" class="fb-btn">
+            <a href="https://www.facebook.com/share/1EnEiVgbg2/" target="_blank" class="fb-btn">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 Connect on Facebook
             </a>
@@ -178,7 +212,7 @@
         </div>
     </div>
 
-    <!-- লোগো ব্যবহারের জন্য আইনি সুরক্ষামূলক ডিসক্লেইমার নোটিশ -->
+    <!-- আইনি সুরক্ষামূলক ডিসক্লেইমার -->
     <div class="disclaimer-section">
         This is a personal employee profile website created for informational/portfolio purposes. <br>
         The 'Delta LP Gas' logo and trademark belong entirely to <a href="http://deltalpg.com" target="_blank">Delta LPG Limited</a>.
